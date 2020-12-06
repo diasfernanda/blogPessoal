@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Usuario } from '../model/Usuario';
 import { AuthService } from '../service/auth.service';
 
@@ -13,10 +14,16 @@ export class CadastroComponent implements OnInit {
   senha: string;
 
   constructor(
-    private authService: AuthService
+    private authService: AuthService,
+    private router: Router
     ) { }
 
   ngOnInit() {
+  }
+
+  conferirSenha(event: any){
+    this.senha = event.target.value
+
   }
   
   cadastrar(){
