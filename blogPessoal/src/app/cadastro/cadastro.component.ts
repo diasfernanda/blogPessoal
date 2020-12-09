@@ -27,7 +27,7 @@ export class CadastroComponent implements OnInit {
   }
   
   cadastrar(){
-    this.authService.cadastrar(this.user).subscribe((resp: any = Usuario) => {
+    this.authService.cadastrar(this.user).subscribe((resp: Usuario) => {
       this.user = resp
       console.log("usuario usuario" + this.user.nome)
       console.log("usuario usuario" + this.user.usuario)
